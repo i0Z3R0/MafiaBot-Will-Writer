@@ -1,0 +1,32 @@
+🗡️ Killing PLAYERX
+🩺 Doccing PLAYER
+🩺 Self Doccing
+🔎 Detting PLAYER
+🔫 Shooting PLAYERX
+📜 Revealing as Mayor
+🖼️ Framing PLAYER
+🤡 Target Died, Jester-ing
+🕵️ PI-ing PLAYER1 and PLAYER2
+🕵️ Spying on PLAYER
+😴 Disting PLAYER
+😴 Disting Mayor
+🗡️ Baited PLAYERX
+💣 Planting on PLAYER
+💥 Detonating Bombs
+🔭 Watching PLAYER
+🔭 Self Watching
+🦠 😷Infecting PLAYER
+🧻 Hoarding PLAYER
+💻 Hacking PLAYER
+🦢 Goosing PLAYER
+🔗 Linking PLAYER1 and PLAYER2
+🩸Draining PLAYER
+⚗️🗡️ Lethaling PLAYERX
+⚗️💨 Invising PLAYER
+⚗️🤞 Truthing PLAYER
+😇 Reincarnating
+😶 Silencing PLAYER
+🎲⬜ Rolling White Dice
+🎲🟨 Rolling Yellow Dice
+🎲🟥 Rolling Red Dice
+📍🧸 Dolling PLAYER
