@@ -34,28 +34,37 @@ def msg(message, Player1, Player2):
 players = []
 pl = False
 
-f = open("rawplayers.txt", "r")
-for line in f:
-	if pl == False:
-		# Party Leader
-		players.append(line.strip("\n")[16:])
-		pl = True
-	else:
-		players.append(line.strip("\n")[2:])
-f.close()
-
-for i in range(len(players)):
-	tpos = players[i].find(' - "')
-	if tpos != -1:
-		players[i] = players[i][0:tpos]
-for i in range(len(players)):
-	players[i] = re.sub(r'[^A-Za-z0-9 ]+', '', players[i]).strip()
-
-g = open("players.txt", "w")
-for p in players:
-	print(p)
-	g.write(p + "\n")
-g.close()
+c = input("Parse players from rawplayers.txt? (y/n) ")
+if c.lower() == "y" or c.lower() == "yes":
+	f = open("rawplayers.txt", "r")
+	for line in f:
+		if pl == False:
+			# Party Leader
+			players.append(line.strip("\n")[16:])
+			pl = True
+		else:
+			players.append(line.strip("\n")[2:])
+	f.close()
+	
+	for i in range(len(players)):
+		tpos = players[i].find(' - "')
+		if tpos != -1:
+			players[i] = players[i][0:tpos]
+	for i in range(len(players)):
+		players[i] = re.sub(r'[^A-Za-z0-9 ]+', '', players[i]).strip()
+	
+	g = open("players.txt", "w")
+	for p in players:
+		#print(p)
+		g.write(p + "\n")
+		g.close()
+elif c.lower() == "n" or c.lower() == "no":
+	print("Fetching players from players.txt")
+	g = open("players.txt", "r")
+	for p in g:
+		#print(p)
+		players.append(p.strip("\n"))
+	g.close()
 
 # Subsitution
 j = open("messages.txt", "r")
@@ -75,9 +84,13 @@ for message in messages:
 	willmsg = msg(message, tmp1, tmp2)
 	print(f'Next Line in Will: {willmsg}\n')
 	will.append(willmsg)
+will.append("I died wtf")
+
+for n in range(len(will)):
+	will[n] = f'N{n + 1} | {will[n]}'
 
 # Commented out for now, already shuffled in the beginning
-# This keeps consistency (e.g.: Lethaled Player, then watched them the night night???)
+# This keeps consistency (e.g.: Lethaled Player, then watched them the next night???)
 #random.shuffle(will)
 print("\n\n\n\n\n")
 willtxt = ""
@@ -87,6 +100,6 @@ for w in will:
 	k.write(w + "\n")
 	willtxt = willtxt + w + "\n"
 
-print(willtxt)
+print(willtxt.strip("\n"))
 
 # Mafiabot allows only 286 characters for some weird reason…
