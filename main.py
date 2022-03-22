@@ -57,7 +57,7 @@ if c.lower() == "y" or c.lower() == "yes":
 	for p in players:
 		#print(p)
 		g.write(p + "\n")
-		g.close()
+	g.close()
 elif c.lower() == "n" or c.lower() == "no":
 	print("Fetching players from players.txt")
 	g = open("players.txt", "r")
